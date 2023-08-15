@@ -32,6 +32,7 @@
                 # hlint = {};
               };
               shell.buildInputs = with pkgs; [
+                openssl
               ];
               # shell.crossPlatforms = p: [ p.ghcjs ];
             };
