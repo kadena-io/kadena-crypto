@@ -11,6 +11,7 @@ import Text.Printf (printf)
 -- parameter.
 newtype PactHash algo
   = PactHash { unPactHash :: ShortByteString }
+  deriving Eq
 
 instance Show (PactHash a) where
   show (PactHash b) = concatMap (printf "%0.2x") (unpack b)
