@@ -69,6 +69,7 @@ test-suite tests
     , base
     , tasty
     , tasty-quickcheck
+    , tasty-hunit
     , QuickCheck
     , bytestring
     , process

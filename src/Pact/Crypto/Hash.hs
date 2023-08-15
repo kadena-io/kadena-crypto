@@ -4,7 +4,7 @@ module Pact.Crypto.Hash where
 
 import Data.ByteString (ByteString)
 
-import Pact.Crypto.Types (PactHash, HashAlgorithm(..))
+import Pact.Crypto.Types (PactHash)
 import Pact.Crypto.Hash.Blake2 (Blake2s256, hashBlake2s256, Blake2b512, hashBlake2b512)
 import Pact.Crypto.Hash.Sha2 (Sha2_256, hashSha2_256, Sha2_512, hashSha2_512)
 import Pact.Crypto.Hash.Sha3 (Sha3_256, hashSha3_256, Sha3_512, hashSha3_512)
