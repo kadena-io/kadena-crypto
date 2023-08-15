@@ -17,12 +17,12 @@
         inherit system overlays;
         inherit (haskellNix) config;
       };
-      flake = pkgs.pact.flake {
+      flake = pkgs.pact-crypto.flake {
         # crossPlatforms = p: [ p.ghcjs ];
       };
       overlays = [ haskellNix.overlay
         (final: prev: {
-          pact =
+          pact-crypto =
             final.haskell-nix.project' {
               src = ./.;
               compiler-nix-name = "ghc962";
@@ -58,7 +58,7 @@
         withHoogle = true;
       };
       packages.check = pkgs.runCommand "check" {} ''
-        echo ${mkCheck "pact" packages.default}
+        echo ${mkCheck "pact-crypto" packages.default}
         echo ${mkCheck "devShell" flake.devShell}
         echo works > $out
       '';
