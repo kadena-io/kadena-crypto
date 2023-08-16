@@ -30,10 +30,14 @@ library
     Pact.Crypto.Hash.Sha2
     Pact.Crypto.Hash.Sha3
     Pact.Crypto.Hash.Keccak
+    Pact.Crypto.Signature
+    Pact.Crypto.Signature.Ed25519
+    Pact.Crypto.Signature.ECDSA
   build-depends:
     , base <5
     , bytestring >=0.10
     , hashes >=0.2
+    , cryptonite >= 0.3
 
 -- test-suite json-tests
 --   main-is: Main.hs

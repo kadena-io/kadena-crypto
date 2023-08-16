@@ -1,6 +1,13 @@
 -- | 
 
-module Pact.Crypto.Types where
+module Pact.Crypto.Types
+  ( PactHash
+  , unPactHash
+  , PactPublicKey
+  , unPactPublicKey
+  , PactSignature
+  , unPactSignature
+  )where
 
 
 import Data.ByteString.Short (ShortByteString, unpack)
@@ -16,5 +23,16 @@ newtype PactHash algo
 instance Show (PactHash a) where
   show (PactHash b) = concatMap (printf "%0.2x") (unpack b)
 
-toHexString :: PactHash a -> String
-toHexString = show
+newtype PactPublicKey algo
+  = PactPublicKey { unPactPublicKey :: ShortByteString }
+  deriving Eq
+
+instance Show (PactPublicKey algo) where
+  show (PactPublicKey b) = concatMap (printf "%0.2x") (unpack b)
+
+newtype PactSignature algo
+  = PactSignature { unPactSignature :: ShortByteString }
+  deriving Eq
+
+instance Show (PactSignature algo) where
+  show (PactSignature b) = concatMap (printf "%0.2x") (unpack b)

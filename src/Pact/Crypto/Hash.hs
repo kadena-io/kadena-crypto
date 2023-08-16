@@ -41,3 +41,6 @@ instance PactHashAlgo Keccak256 where
 
 instance PactHashAlgo Keccak512 where
   pactHash = hashKeccak512
+
+toHexString :: PactHash a -> String
+toHexString = show
