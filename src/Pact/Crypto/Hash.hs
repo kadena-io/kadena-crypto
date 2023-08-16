@@ -1,10 +1,30 @@
 -- | 
 
-module Pact.Crypto.Hash where
+module Pact.Crypto.Hash (
+  -- * Producing hashes
+
+  -- ** Specific hashing functions
+  hashSha2_256,
+  hashSha2_512,
+  hashSha3_256,
+  hashSha3_512,
+  hashKeccak256,
+  hashKeccak512,
+  hashBlake2s256,
+  hashBlake2b512,
+
+  -- ** Generic hashing
+  pactHash,
+
+  -- * Consuming hashes
+  toHexString,
+  unPactHash
+
+) where
 
 import Data.ByteString (ByteString)
 
-import Pact.Crypto.Hash.Internal (PactHash)
+import Pact.Crypto.Hash.Internal (PactHash, unPactHash)
 import Pact.Crypto.Hash.Blake2 (Blake2s256, hashBlake2s256, Blake2b512, hashBlake2b512)
 import Pact.Crypto.Hash.Sha2 (Sha2_256, hashSha2_256, Sha2_512, hashSha2_512)
 import Pact.Crypto.Hash.Sha3 (Sha3_256, hashSha3_256, Sha3_512, hashSha3_512)
