@@ -11,7 +11,7 @@ module Pact.Crypto.Hash.Blake2
 
 import qualified Data.Hash.Blake2 as H
 import Data.ByteString (ByteString)
-import Pact.Crypto.Types (PactHash(..))
+import Pact.Crypto.Hash.Internal (PactHash(..))
 
 -- | A phantom type for marking blake2s-256 hashes.
 data Blake2s256

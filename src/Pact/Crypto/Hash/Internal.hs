@@ -1,7 +1,6 @@
--- | 
+-- |
 
-module Pact.Crypto.Types where
-
+module Pact.Crypto.Hash.Internal where
 
 import Data.ByteString.Short (ShortByteString, unpack)
 import Text.Printf (printf)
@@ -15,6 +14,3 @@ newtype PactHash algo
 
 instance Show (PactHash a) where
   show (PactHash b) = concatMap (printf "%0.2x") (unpack b)
-
-toHexString :: PactHash a -> String
-toHexString = show
