@@ -24,12 +24,13 @@ library
   hs-source-dirs: src
   default-language: Haskell2010
   exposed-modules:
-    Pact.Crypto.Types
     Pact.Crypto.Hash
     Pact.Crypto.Hash.Blake2
     Pact.Crypto.Hash.Sha2
     Pact.Crypto.Hash.Sha3
     Pact.Crypto.Hash.Keccak
+  other-modules:
+    Pact.Crypto.Hash.Internal
   build-depends:
     , base <5
     , bytestring >=0.10

@@ -11,7 +11,7 @@ module Pact.Crypto.Hash.Sha2
 
 import qualified Data.Hash.SHA2 as H
 import Data.ByteString (ByteString)
-import Pact.Crypto.Types (PactHash(..))
+import Pact.Crypto.Hash.Internal (PactHash(..))
 
 -- | A phantom type for marking sha2-256 hashes.
 data Sha2_256

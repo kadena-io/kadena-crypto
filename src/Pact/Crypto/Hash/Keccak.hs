@@ -11,7 +11,7 @@ module Pact.Crypto.Hash.Keccak
 
 import qualified Data.Hash.Keccak as H
 import Data.ByteString (ByteString)
-import Pact.Crypto.Types (PactHash(..))
+import Pact.Crypto.Hash.Internal (PactHash(..))
 
 -- | A phantom type for marking keccack-256 hashes.
 data Keccak256

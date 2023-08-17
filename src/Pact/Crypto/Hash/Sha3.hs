@@ -11,7 +11,7 @@ module Pact.Crypto.Hash.Sha3
 
 import qualified Data.Hash.SHA3 as H
 import Data.ByteString (ByteString)
-import Pact.Crypto.Types (PactHash(..))
+import Pact.Crypto.Hash.Internal (PactHash(..))
 
 -- | A phantom type for marking sha3-256 hashes.
 data Sha3_256

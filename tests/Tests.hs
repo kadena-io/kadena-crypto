@@ -19,8 +19,7 @@ import Test.Tasty.QuickCheck
 import Test.Tasty.HUnit (assertEqual, testCase)
 import Test.QuickCheck.Monadic (assert, monadicIO)
 
-import Pact.Crypto.Hash
-import Pact.Crypto.Types (PactHash(PactHash, unPactHash), toHexString)
+import Pact.Crypto.Hash (unPactHash, toHexString)
 import Pact.Crypto.Hash.Sha2 (hashSha2_256, hashSha2_512, Sha2_256, Sha2_512)
 import Pact.Crypto.Hash.Sha3 (hashSha3_256, hashSha3_512, Sha3_256, Sha3_512)
 
