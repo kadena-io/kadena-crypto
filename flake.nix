@@ -58,7 +58,7 @@
         withHoogle = true;
       };
       packages.check = pkgs.runCommand "check" {} ''
-        echo ${mkCheck "pact-crypto" packages.default}
+        echo ${mkCheck "kadena-crypto" packages.default}
         echo ${mkCheck "devShell" flake.devShell}
         echo works > $out
       '';
