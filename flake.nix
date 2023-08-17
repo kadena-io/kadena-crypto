@@ -22,7 +22,7 @@
       };
       overlays = [ haskellNix.overlay
         (final: prev: {
-          pact-crypto =
+          kadena-crypto =
             final.haskell-nix.project' {
               src = ./.;
               compiler-nix-name = "ghc962";
