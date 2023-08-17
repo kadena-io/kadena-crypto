@@ -41,11 +41,11 @@ toHexString = show
 
 -- | If you have a bytestring that you are sure is produced
 -- by some hashing algorithm "a", you can unsafely produce
--- an `PactHash a`.
+-- an `Hash a`.
 unsafeWrap :: ShortByteString -> Hash a
 unsafeWrap bs = Hash bs
 
--- | Any type that can hash a bytestring into a `PactHash`.
+-- | Any type that can hash a bytestring into a `Hash`.
 class HashAlgo algo where
   hash :: ByteString -> Hash algo
 

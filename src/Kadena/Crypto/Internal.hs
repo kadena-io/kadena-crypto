@@ -3,8 +3,8 @@ module Kadena.Crypto.Internal where
 import Data.ByteString.Short (ShortByteString, unpack)
 import Text.Printf (printf)
 
--- | A `PactHash` is a `ShortByteString` representing the result
--- of running the hash algorithm specified by `PactHash`'s type
+-- | A `Hash` is a `ShortByteString` representing the result
+-- of running the hash algorithm specified by `Hash`'s type
 -- parameter.
 --
 -- The constructor is hidden, to encourage the use of the
