@@ -1,5 +1,5 @@
 {
-  description = "Kadena's Pact smart contract language";
+  description = "Kadena's Crypto Primitives";
 
   inputs = {
     # nixpkgs.follows = "haskellNix/nixpkgs";
@@ -17,12 +17,12 @@
         inherit system overlays;
         inherit (haskellNix) config;
       };
-      flake = pkgs.pact-crypto.flake {
+      flake = pkgs.kadena-crypto.flake {
         # crossPlatforms = p: [ p.ghcjs ];
       };
       overlays = [ haskellNix.overlay
         (final: prev: {
-          pact-crypto =
+          kadena-crypto =
             final.haskell-nix.project' {
               src = ./.;
               compiler-nix-name = "ghc962";
@@ -46,7 +46,7 @@
         echo works > $out
       '';
     in flake // rec {
-      packages.default = flake.packages."pact-crypto:lib:pact-crypto";
+      packages.default = flake.packages."kadena-crypto:lib:kadena-crypto";
 
       devShell = pkgs.haskellPackages.shellFor {
         buildInputs = with pkgs.haskellPackages; [
@@ -58,7 +58,7 @@
         withHoogle = true;
       };
       packages.check = pkgs.runCommand "check" {} ''
-        echo ${mkCheck "pact-crypto" packages.default}
+        echo ${mkCheck "kadena-crypto" packages.default}
         echo ${mkCheck "devShell" flake.devShell}
         echo works > $out
       '';

@@ -1,0 +1,56 @@
+cabal-version: 3.0
+name: kadena-crypto
+version: 0.1.0.0
+synopsis: Kadena Crypto
+description: Hash functions for the Pact smart contract language
+homepage: https://github.com/kadena-io/kadena-crypto
+bug-reports: https://github.com/kadena-io/kadena-crypto/issues
+license: BSD-3-Clause
+license-file: LICENSE
+author: Robert Soeldner
+maintainer: robert@kadena.io
+copyright: Copyright (C) 2023 Kadena LLC.
+category: Language
+build-type: Simple
+
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+-- -------------------------------------------------------------------------- --
+-- Internal Libraries
+
+library
+  hs-source-dirs: src
+  default-language: Haskell2010
+  exposed-modules:
+    Kadena.Crypto.Hash
+    Kadena.Crypto.Hash.Blake2
+    Kadena.Crypto.Hash.Sha2
+    Kadena.Crypto.Hash.Sha3
+    Kadena.Crypto.Hash.Keccak
+    Kadena.Crypto.Signature
+    Kadena.Crypto.Signature.Ed25519
+    Kadena.Crypto.Signature.ECDSA
+  other-modules:
+    Kadena.Crypto.Internal
+  build-depends:
+    , base <5
+    , bytestring >=0.10
+    , hashes >=0.2
+    , cryptonite >= 0.3
+
+test-suite tests
+  main-is: Tests.hs
+  hs-source-dirs: tests
+  type: exitcode-stdio-1.0
+  default-language: Haskell2010
+  build-depends:
+    , base
+    , tasty
+    , tasty-quickcheck
+    , tasty-hunit
+    , QuickCheck
+    , bytestring
+    , process
+    , kadena-crypto
