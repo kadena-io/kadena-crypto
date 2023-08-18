@@ -17,7 +17,7 @@
         inherit system overlays;
         inherit (haskellNix) config;
       };
-      flake = kadena-crypto.flake {
+      flake = pkgs.kadena-crypto.flake {
         # crossPlatforms = p: [ p.ghcjs ];
       };
       overlays = [ haskellNix.overlay
