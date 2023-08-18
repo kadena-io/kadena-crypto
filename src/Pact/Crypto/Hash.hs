@@ -1,5 +1,3 @@
--- | 
-
 module Pact.Crypto.Hash (
   -- * Representing a hash
   PactHash,
