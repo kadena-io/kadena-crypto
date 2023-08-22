@@ -36,9 +36,11 @@ library
     Kadena.Crypto.Internal
   build-depends:
     , base <5
+    , base16-bytestring
     , bytestring >=0.10
     , hashes >=0.2
     , cryptonite >= 0.3
+    , text
 
 test-suite tests
   main-is: Tests.hs
